@@ -22,14 +22,13 @@ function App() {
     const call = async () => {
       try{
         console.log(location)
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.API_KEY}`);
+        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`);
         const data = await response.json();
         await setWeather(data);
       }catch(err){
         console.error(err);
       }finally{
-        console.log('weather');
-        console.log(weather);
+        console.log(weather)
       }
     }
     call();
@@ -46,10 +45,10 @@ function App() {
       <input ref={localInput} type="string"/>
       <input type="submit"/>
     </form>
-    {Object.keys(weather).length? (
-      <WeatherPanel data={weather}/>
-    ):""
-    }
+      <div>
+      {weather.name? <p>{weather.name}</p> : ""}
+      {/* {weather.main.temp? <p>{weather.main.temp} F</p> : ''} */}
+      </div>
   </div>
  )
 }
