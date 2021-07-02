@@ -1,25 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { useEffect, useState, useRef } from 'react';
+import WeatherPanel from './components/WeatherPanel';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const localInput = useRef('');
+
+  const [ location, setLocation ] = useState('');
+  const [ weather, setWeather ] = useState({});
+
+  useEffect(() => {
+    const call = async () => {
+      try{
+        console.log(location)
+        const response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${location}&appid=05119592729e071fac93079ffd8a5c7c&units=imperial`, {
+          method: 'GET',
+          header: {
+            'Content-Type': 'application/json'
+          }
+        });
+        const data = await response.json();
+        await setWeather(data);
+      }catch(err){
+        console.error(err);
+      }finally{
+        console.log('weather');
+        console.log(weather);
+      }
+    }
+    call();
+  }, [location])
+
+  const searchLocal = (e) => {
+    e.preventDefault();
+    setLocation(localInput.current.value);
+  }
+ return(
+  <div> 
+    <h1> Weather app</h1>
+    <form onClick={searchLocal}>
+      <input ref={localInput} type="string"/>
+      <input type="submit"/>
+    </form>
+    {Object.keys(weather).length? (
+      <WeatherPanel data={weather}/>
+    ):""
+    }
+  </div>
+ )
 }
 
 export default App;
