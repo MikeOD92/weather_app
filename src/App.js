@@ -14,7 +14,7 @@ function App() {
     const call = async () => {
       try{
         console.log(location)
-        const response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${location}&appid=05119592729e071fac93079ffd8a5c7c&units=imperial`, {
+        const response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.API_KEY}&units=imperial`, {
           method: 'GET',
           header: {
             'Content-Type': 'application/json'
