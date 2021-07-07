@@ -18,7 +18,6 @@ export default function WeatherPanel(props){
                 <p> {props.weatherData? `humidity: ${props.weatherData.main.humidity}%`: ''}</p>
                 <p> {props.weatherData? `wind: ${props.weatherData.wind.deg} deg  at ${props.weatherData.wind.speed}mph`: ''}</p>
             </div>
-
         </div>
     )
 }
