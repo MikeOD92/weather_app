@@ -11,24 +11,23 @@ function App() {
   const [ location, setLocation ] = useState('');
   const [ weather, setWeather ] = useState({});
 
-  // const [query, updateQuery] = useState({
-	// 	baseURL: 'api.openweathermap.org/data/2.5/weather?',
-  //   location: 'q=' + location,
-	// 	apiKey: '&appid=' + process.env.API_KEY,
-	// 	searchURL: ''
-	// });
-
   useEffect(() => {
+    //let regEx = /1-9/ ;
     const call = async () => {
+      /// can add ? here to see if location is letters or numbers use an regEX 
+      // use proper  api url for zip city name, etc. 
+      
+      // if(location.search(regEx) > 0){
+      //   console.log('okaie dokie')
+      // }
       try{
         console.log(location)
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`);
         const data = await response.json();
         await setWeather(data);
+        await console.log(weather)
       }catch(err){
         console.error(err);
-      }finally{
-        console.log(weather)
       }
     }
     call();
@@ -46,8 +45,9 @@ function App() {
       <input type="submit"/>
     </form>
       <div>
-      {weather.name? <p>{weather.name}</p> : ""}
-      {/* {weather.main.temp? <p>{weather.main.temp} F</p> : ''} */}
+      { weather.name? <WeatherPanel weatherData={weather}/> : ''}
+      {/* {weather.name? <p>{weather.name}</p> : ""}
+      {weather.main? <p>{weather.main.temp} F</p> : ''} */}
       </div>
   </div>
  )
