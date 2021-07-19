@@ -47,7 +47,7 @@ function App() {
   const saveLocal = (e) => {
     e.preventDefault();
     if(localInput.current.value !== '' && saved.includes(localInput.current.value) === false){
-      setSaved( saved => [saved,localInput.current.value ])
+      setSaved( saved => [saved, localInput.current.value ])
       localStorage.setItem('savedWeather', saved.toString() )
     }else {
       console.log('this is either am empty string or being repeted')
