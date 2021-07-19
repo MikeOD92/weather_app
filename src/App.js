@@ -25,14 +25,16 @@ function App() {
       //   console.log('okaie dokie')
       // }
       try{
-        console.log(location)
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`);
+        // console.log(location)
+        const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
+        const response = await fetch(queryURL);
         const data = await response.json();
         await setWeather(data);
         await console.log(weather)
+        await console.log(queryURL)
       }catch(err){
         console.error(err);
-      }
+      } 
     }
     call();
   }, [location])
@@ -44,8 +46,15 @@ function App() {
 
   const saveLocal = (e) => {
     e.preventDefault();
-    setSaved( saved => [...saved,localInput.current.value ])
-    localStorage.setItem('savedWeather', saved.toString() )
+    if(localInput.current.value !== '' && saved.includes(localInput.current.value) === false){
+      setSaved( saved => [saved,localInput.current.value ])
+      localStorage.setItem('savedWeather', saved.toString() )
+    }else {
+      console.log('this is either am empty string or being repeted')
+    }
+    
+      /// when we save a location it doesn't like to update immeditly, 
+      // and it seems to take the location we had in previouslty
   }
   
 return(
@@ -60,14 +69,8 @@ return(
       { weather.name? <WeatherPanel weatherData={weather}/> : ''}
       </div>
       <div> 
-        {localStorage.getItem('savedWeather')? <SavedLocals setLocation={setLocation}/>: "nope"}
+        {localStorage.getItem('savedWeather')? <SavedLocals location={location} setLocation={setLocation}/>: ""}
       </div>
-      {/* <div>
-        check local storage for an array = to saved locations if it exists load
-        <SavedsLocals with props location and setLocation to we can update the 
-        page with the buttons this will make
-        />
-      </div> */}
 
   </div>
 )
