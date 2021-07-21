@@ -12,8 +12,9 @@ function App() {
 
   const [ location, setLocation ] = useState('');
   const [ weather, setWeather ] = useState({});
-  const [ saved, setSaved ] = useState(localStorage.getItem('savedWeather')||[]);
+  const [ saved, setSaved ] = useState(localStorage.getItem('savedWeather')||"");
 
+  // console.log(saved)
   
   useEffect(() => {
     //let regEx = /1-9/ ;
@@ -25,13 +26,12 @@ function App() {
       //   console.log('okaie dokie')
       // }
       try{
-        // console.log(location)
         const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
         const response = await fetch(queryURL);
         const data = await response.json();
         await setWeather(data);
-        await console.log(weather)
-        await console.log(queryURL)
+        // await console.log(weather)
+        // await console.log(queryURL)
       }catch(err){
         console.error(err);
       } 
@@ -46,12 +46,20 @@ function App() {
 
   const saveLocal = (e) => {
     e.preventDefault();
-    if(localInput.current.value !== '' && saved.includes(localInput.current.value) === false){
-      setSaved( saved => [saved, localInput.current.value ])
-      localStorage.setItem('savedWeather', saved.toString() )
-    }else {
-      console.log('this is either am empty string or being repeted')
-    }
+    // setLocation(localInput.current.value);
+    // if(localInput.current.value !== '' && saved.includes(localInput.current.value) === false){
+      setSaved( saved => `${saved},${localInput.current.value}`)
+      localStorage.setItem('savedWeather', saved )
+
+
+      console.log('saved should be updated')
+      console.log('in state')
+      console.log(saved)
+      console.log('in local storage')
+      console.log(localStorage.getItem('savedWeather'))
+    // }else {
+    //   console.log('this is either am empty string or being repeted')
+    // }
     
       /// when we save a location it doesn't like to update immeditly, 
       // and it seems to take the location we had in previouslty
@@ -68,8 +76,9 @@ return(
       <div>
       { weather.name? <WeatherPanel weatherData={weather}/> : ''}
       </div>
-      <div> 
-        {localStorage.getItem('savedWeather')? <SavedLocals location={location} setLocation={setLocation}/>: ""}
+      <div>
+         {/*localStorage.getItem('savedWeather')  */}
+        {saved? <SavedLocals list={saved} location={location} setLocation={setLocation}/>: ""}
       </div>
 
   </div>
