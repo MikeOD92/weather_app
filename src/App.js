@@ -30,8 +30,6 @@ function App() {
         const response = await fetch(queryURL);
         const data = await response.json();
         await setWeather(data);
-        // await console.log(weather)
-        // await console.log(queryURL)
       }catch(err){
         console.error(err);
       } 
@@ -46,23 +44,16 @@ function App() {
 
   const saveLocal = (e) => {
     e.preventDefault();
-    // setLocation(localInput.current.value);
-    // if(localInput.current.value !== '' && saved.includes(localInput.current.value) === false){
-      setSaved( saved => `${saved},${localInput.current.value}`)
-      localStorage.setItem('savedWeather', saved )
+    if(saved.toLowerCase().includes(e.target.value.toLowerCase())){
+      alert(`location '${e.target.value}' already saved`);
+    } else {
+      let newStorage = `${saved},${localInput.current.value}`
 
+      localStorage.setItem('savedWeather', newStorage )
 
-      console.log('saved should be updated')
-      console.log('in state')
-      console.log(saved)
-      console.log('in local storage')
-      console.log(localStorage.getItem('savedWeather'))
-    // }else {
-    //   console.log('this is either am empty string or being repeted')
-    // }
-    
-      /// when we save a location it doesn't like to update immeditly, 
-      // and it seems to take the location we had in previouslty
+      setSaved(newStorage)
+
+    }
   }
   
 return(
@@ -72,12 +63,11 @@ return(
       <input ref={localInput} type="string"/>
       <input type="submit"/>
     </form> 
-    <button onClick={saveLocal}>SAVE</button>
+    <button onClick={saveLocal} value={localInput.current.value}>SAVE</button>
       <div>
       { weather.name? <WeatherPanel weatherData={weather}/> : ''}
       </div>
       <div>
-         {/*localStorage.getItem('savedWeather')  */}
         {saved? <SavedLocals list={saved} location={location} setLocation={setLocation}/>: ""}
       </div>
 
