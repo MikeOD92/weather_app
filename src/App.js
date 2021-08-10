@@ -53,7 +53,7 @@ function App() {
 
   const saveLocal = (e) => {
     e.preventDefault();
-    if(saved.toLowerCase().includes(e.target.value.toLowerCase())){
+    if(saved.toLowerCase().includes(weather.name.toLowerCase())){
       alert(`location '${weather.name}' already saved`);
     } else {
       let newStorage = `${saved},${localInput.current.value}`

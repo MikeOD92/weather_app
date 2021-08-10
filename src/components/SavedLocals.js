@@ -16,6 +16,7 @@ export default function SavedLocals(props){
 
     useEffect(() => {
         setList(arr)
+        console.log(arr)
     }, [props])
 
     return(
