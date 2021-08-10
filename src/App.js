@@ -56,7 +56,7 @@ function App() {
     if(saved.toLowerCase().includes(weather.name.toLowerCase())){
       alert(`location '${weather.name}' already saved`);
     } else {
-      let newStorage = `${saved},${localInput.current.value}`
+      let newStorage = `${saved},${weather.name}`
 
       localStorage.setItem('savedWeather', newStorage )
 
