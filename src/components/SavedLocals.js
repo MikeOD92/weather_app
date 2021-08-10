@@ -21,7 +21,7 @@ export default function SavedLocals(props){
     return(
     <div className="saved">
         {list.map((loc)=>{
-            return (<button value={loc} onClick={viewSaved}>{loc}</button>)
+            return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
         })}
     </div>
     )

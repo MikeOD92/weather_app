@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
@@ -65,7 +66,7 @@ function App() {
   }
   
 return(
-  <div> 
+  <div className="container-fluid"> 
     <h1> Weather app</h1>
     <form onSubmit={searchLocal}>
       <input ref={localInput} type="string"/>
