@@ -14,25 +14,32 @@ function App() {
   const [ weather, setWeather ] = useState({});
   const [ saved, setSaved ] = useState(localStorage.getItem('savedWeather')||"");
 
-  // console.log(saved)
-  
   useEffect(() => {
-    //let regEx = /1-9/ ;
+
+    let regEx = /^[0-9]{5}(?:-[0-9]{4})?$/;
+
     const call = async () => {
-      /// can add ? here to see if location is letters or numbers use an regEX 
-      // use proper  api url for zip , city name, etc. 
-      
-      // if(location.search(regEx) > 0){
-      //   console.log('okaie dokie')
-      // }
-      try{
-        const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
-        const response = await fetch(queryURL);
-        const data = await response.json();
-        await setWeather(data);
-      }catch(err){
-        console.error(err);
-      } 
+
+      if(regEx.test(location)){
+        try{
+          const queryURL = `http://api.openweathermap.org/data/2.5/weather?zip=${location},us&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
+          const response = await fetch(queryURL);
+          const data = await response.json();
+          await setWeather(data);
+        }catch(err){
+          console.error(err);
+        } 
+      }else{
+        try{
+          const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
+          const response = await fetch(queryURL);
+          const data = await response.json();
+          await setWeather(data);
+        }catch(err){
+          console.error(err);
+        } 
+      }
+
     }
     call();
   }, [location])
@@ -40,12 +47,13 @@ function App() {
   const searchLocal = (e) => {
     e.preventDefault();
     setLocation(localInput.current.value);
+    localInput.current.value = "";
   }
 
   const saveLocal = (e) => {
     e.preventDefault();
     if(saved.toLowerCase().includes(e.target.value.toLowerCase())){
-      alert(`location '${e.target.value}' already saved`);
+      alert(`location '${weather.name}' already saved`);
     } else {
       let newStorage = `${saved},${localInput.current.value}`
 
