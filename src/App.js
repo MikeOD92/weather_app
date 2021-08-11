@@ -66,13 +66,14 @@ function App() {
   }
   
 return(
-  <div className="container-fluid"> 
+  <div className="container-fluid text-center"> 
     <h1> Weather app</h1>
     <form onSubmit={searchLocal}>
       <input ref={localInput} type="string"/>
       <input type="submit"/>
+      <button onClick={saveLocal} value={localInput.current.value}>SAVE</button>
     </form> 
-    <button onClick={saveLocal} value={localInput.current.value}>SAVE</button>
+   
       <div>
       { weather.name? <WeatherPanel weatherData={weather}/> : ''}
       </div>
