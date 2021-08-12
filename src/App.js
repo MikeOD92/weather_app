@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './App.scss';
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import WeatherPanel from './components/WeatherPanel';

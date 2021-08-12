@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand&display=swap');
+//font-family: 'Press Start 2P', cursive;
+//font-family: 'Quicksand', sans-serif;
+*{
+  // background: whitesmoke;
+  padding: 4px;
+  font-family: 'Quicksand', sans-serif;
+  .weather-head{
+    background-color: rgba(44,210,255, 0.4);
+  }
+  .details{
+    background-color: rgba(44,210,255, 0.6);
+
+  }
+.loc{
+  font-size: 48px;
+}
+.cords{
+  font-size: 11px;
+}
+.temp{
+  font-size: 40px;
+  font-family: 'Press Start 2P', cursive;
+
+}
+.condition{
+  font-size: 32px;
+}
+.btn{
+  margin-right: 5px;
+  margin-bottom: 5px;
+}}
+

@@ -1,4 +1,4 @@
-import '../App.css';
+import '../App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 
@@ -14,7 +14,7 @@ export default function WeatherPanel(props){
                 <p> {props.weatherData? `feels like: ${props.weatherData.main.feels_like} F`: ''}</p>
                 <p className="condition"> {props.weatherData? `${props.weatherData.weather[0].description}` : ''}</p>
             </div>
-            <div className="deatails">
+            <div className="details">
                 <p> {props.weatherData? `high: ${props.weatherData.main.temp_max} | low: ${props.weatherData.main.temp_min}`: ''}</p>
                 <p> {props.weatherData? `humidity: ${props.weatherData.main.humidity}%`: ''}</p>
                 <p> {props.weatherData? `wind: ${props.weatherData.wind.deg} deg  at ${props.weatherData.wind.speed}mph`: ''}</p>
