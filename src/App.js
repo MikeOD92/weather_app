@@ -75,7 +75,7 @@ return(
     </form> 
    
       <div>
-      { weather.name? <WeatherPanel weatherData={weather}/> : ''}
+      { weather.name? <WeatherPanel weatherData={weather} saved={saved} setSaved={setSaved}/> : ''}
       </div>
       <div>
         {saved? <SavedLocals list={saved} location={location} setLocation={setLocation}/>: ""}

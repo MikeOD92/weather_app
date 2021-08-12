@@ -4,7 +4,21 @@ import React from 'react';
 
 export default function WeatherPanel(props){
 
+    const deleteSaved = (e) => {
+        // e.preventDefault();
+        console.log(props.weatherData.name);
+        // console.log(props.saved)
+        let listArr = props.saved.split(',');
+        let del = listArr.indexOf(props.weatherData.name)
+        listArr.splice(del, 1)
 
+        const newSaved = listArr.join()
+
+        localStorage.setItem('savedWeather', newSaved )
+
+        props.setSaved(newSaved);
+        
+    }
     return(
         <div className="weather-tile">
             <div className="weather-head">
@@ -18,6 +32,7 @@ export default function WeatherPanel(props){
                 <p> {props.weatherData? `high: ${props.weatherData.main.temp_max} | low: ${props.weatherData.main.temp_min}`: ''}</p>
                 <p> {props.weatherData? `humidity: ${props.weatherData.main.humidity}%`: ''}</p>
                 <p> {props.weatherData? `wind: ${props.weatherData.wind.deg} deg  at ${props.weatherData.wind.speed}mph`: ''}</p>
+                {props.saved.includes(props.weatherData.name)? <button onClick={deleteSaved}>Delete</button>: ''}
             </div>
         </div>
     )
