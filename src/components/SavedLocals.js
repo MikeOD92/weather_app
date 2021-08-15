@@ -3,8 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
+import { MdRemoveRedEye } from "react-icons/md";
 
 export default function SavedLocals(props){
+
+    const [show, setShow] = useState(false);
+
+    const toggle = (e) =>{
+        e.preventDefault();
+        if (show){
+            
+            setShow(false)
+        }else{
+
+            setShow(true); 
+    }}
 
     const viewSaved = (e) => {
         props.setLocation(e.target.value);
@@ -20,12 +33,26 @@ export default function SavedLocals(props){
         console.log(arr)
     }, [props])
 
-    return(
-    <div className="saved">
-        {list.map((loc)=>{
-            return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
-        })}
-    </div>
-    )
+    if(show){
+        return(
+
+        <div className="saved"onClick={toggle}>
+            <div className="tab"><MdRemoveRedEye/> </div>
+            {list.map((loc)=>{
+                return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
+            })}
+        </div>
+        )
+    }else{
+        return(
+            <div className="saved hide"onClick={toggle}>
+            <div className="tab"> <MdRemoveRedEye className="tab-icon"/> </div>
+            {list.map((loc)=>{
+                return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
+            })}
+        </div> 
+        )
+    }
+
 
 }

@@ -75,9 +75,9 @@ return(
 
     <h1> Weather app</h1>
     <form onSubmit={searchLocal}>
-      <input ref={localInput} type="string"/>
-      <input type="submit"/>
-      <button onClick={saveLocal} value={localInput.current.value}>SAVE</button>
+      <input className='search' ref={localInput} type="string"/>
+      <input  className="btn btn-info" type="submit"/>
+      <button className="btn btn-info" onClick={saveLocal} value={localInput.current.value}>SAVE</button>
     </form> 
       <div>
       { weather.name? <WeatherPanel weatherData={weather} saved={saved} setSaved={setSaved}/> : ''}

@@ -5,18 +5,44 @@
   // background: whitesmoke;
   padding: 4px;
   font-family: 'Quicksand', sans-serif;
-  color: whitesmoke;
+  // color: whitesmoke;
   body{
-    background-image: url(./img/background1.jpg);
+    background-image: url(./img/background2.jpg);
     background-size: cover;
   }  
   .weather-head{
-    background-color: rgba(44,210,255, 0.4);
+    background-color: rgba(255, 255, 255, 0.8);
   }
   .details{
-    background-color: rgba(44,210,255, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
 
   }
+  .saved{
+    padding: 10px;
+    background-color: indianred;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    
+    .tab{
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      left: 102%;
+      bottom: 1.5vh;
+      background-color: indianred;
+      .tab-icon{
+        height:45px;
+        width:45px;
+      }
+    }
+  }
+  .hide{
+    transform: translate3d(-100vw, 0, 0);
+  }
+.search{ 
+  color: black;
+}
 .loc{
   font-size: 48px;
 }
@@ -32,5 +58,6 @@
 .btn{
   margin-right: 5px;
   margin-bottom: 5px;
+
 }}
 
