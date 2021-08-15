@@ -5,6 +5,11 @@
   // background: whitesmoke;
   padding: 4px;
   font-family: 'Quicksand', sans-serif;
+  color: whitesmoke;
+  body{
+    background-image: url(./img/background1.jpg);
+    background-size: cover;
+  }  
   .weather-head{
     background-color: rgba(44,210,255, 0.4);
   }

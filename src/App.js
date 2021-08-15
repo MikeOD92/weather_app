@@ -4,7 +4,6 @@ import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import WeatherPanel from './components/WeatherPanel';
 import SavedLocals from './components/SavedLocals';
-
 require('dotenv').config();
 
 function App() {
@@ -53,10 +52,16 @@ function App() {
 
   const saveLocal = (e) => {
     e.preventDefault();
-    if(saved.toLowerCase().includes(weather.name.toLowerCase())){
-      alert(`location '${weather.name}' already saved`);
+    let savingName = ''
+    if(weather.name){
+      savingName = weather.name;
+    }else{
+      savingName = localInput.current.value;
+    }
+    if(saved.toLowerCase().includes(savingName.toLowerCase())){
+      alert(`location '${savingName}' already saved`);
     } else {
-      let newStorage = `${saved},${weather.name}`
+      let newStorage = `${saved},${savingName}`
 
       localStorage.setItem('savedWeather', newStorage )
 
@@ -67,13 +72,13 @@ function App() {
   
 return(
   <div className="container-fluid text-center"> 
+
     <h1> Weather app</h1>
     <form onSubmit={searchLocal}>
       <input ref={localInput} type="string"/>
       <input type="submit"/>
       <button onClick={saveLocal} value={localInput.current.value}>SAVE</button>
     </form> 
-   
       <div>
       { weather.name? <WeatherPanel weatherData={weather} saved={saved} setSaved={setSaved}/> : ''}
       </div>
