@@ -4,6 +4,9 @@ import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import WeatherPanel from './components/WeatherPanel';
 import SavedLocals from './components/SavedLocals';
+import { MdRemoveRedEye, MdSave, MdSearch, MdViewHeadline} from "react-icons/md";
+
+
 require('dotenv').config();
 
 function App() {
@@ -72,19 +75,23 @@ function App() {
   
 return(
   <div className="container-fluid text-center"> 
-
-    <h1> Weather app</h1>
-    <form onSubmit={searchLocal}>
-      <input className='search' ref={localInput} type="string"/>
-      <input  className="btn btn-info" type="submit"/>
-      <button className="btn btn-info" onClick={saveLocal} value={localInput.current.value}>SAVE</button>
-    </form> 
-      <div>
+    <div className="app-header">
+      <h1> Weather app</h1>
+        <form onSubmit={searchLocal}>
+          <input className='search' ref={localInput} type="string"/>
+          <div className="btn-group">
+            <button  className="btn btn-info main-app-btn" type="submit"> <MdSearch className="main-icon" /> </button>
+            <button className="btn btn-info main-app-btn" onClick={saveLocal} value={localInput.current.value}> <MdSave className="main-icon"/></button>
+          </div>
+        </form> 
+    </div>
+ 
+    <div>
       { weather.name? <WeatherPanel weatherData={weather} saved={saved} setSaved={setSaved}/> : ''}
-      </div>
-      <div>
-        {saved? <SavedLocals list={saved} location={location} setLocation={setLocation}/>: ""}
-      </div>
+    </div>
+    <div>
+      {saved? <SavedLocals list={saved} location={location} setLocation={setLocation}/>: ""}
+    </div>
 
   </div>
 )

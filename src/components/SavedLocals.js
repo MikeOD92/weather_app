@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-import { MdRemoveRedEye } from "react-icons/md";
+import { MdRemoveRedEye, MdSave, MdSearch, MdViewHeadline} from "react-icons/md";
 
 export default function SavedLocals(props){
 
@@ -37,7 +37,7 @@ export default function SavedLocals(props){
         return(
 
         <div className="saved"onClick={toggle}>
-            <div className="tab"><MdRemoveRedEye/> </div>
+            <div className="tab"><MdViewHeadline className="tab-icon"/> </div>
             {list.map((loc)=>{
                 return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
             })}
@@ -46,7 +46,7 @@ export default function SavedLocals(props){
     }else{
         return(
             <div className="saved hide"onClick={toggle}>
-            <div className="tab"> <MdRemoveRedEye className="tab-icon"/> </div>
+            <div className="tab"> <MdViewHeadline className="tab-icon"/> </div>
             {list.map((i, loc)=>{
                 return (<button key={i} className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
             })}
