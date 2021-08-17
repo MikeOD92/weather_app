@@ -5,95 +5,98 @@
 //font-family: 'Nunito', sans-serif;
 
 *{
-  // background: whitesmoke;
-  padding: 4px;
   font-family: 'Nunito', sans-serif;
-  // color: whitesmoke;
   body{
     background-image: url(./img/background2.jpg);
     background-size: cover;
-  h1{
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 2vw;
-  }
-
-  .app-header{
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 15px;
-    .search{
-      padding:10px;
+    h1{
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 2vw;
     }
-    .main-app-btn{
-      padding:3px;
-      width: 50px;
-      height: 50px;
-    .main-icon{
-      width: 45px;
-      height: 45px;
+
+    .app-header{
+      // background-color: rgba(255, 255, 255, 0.6);
+      // border-radius: 15px;
+      width: 100vw;
+      background: linear-gradient(rgba(255, 255, 255, 0.877), rgba(0,0,0,0));
+
+      .search{
+        padding:10px;
+      }
+      .main-app-btn{
+        padding:3px;
+        width: 50px;
+        height: 50px;
+      .main-icon{
+        width: 45px;
+        height: 45px;
+        }
       }
     }
-  }
-  .weather-head{
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    margin-bottom: 5vh;
-    h2{
-      font-weight: 400;
+    .weather-head{
+      background: linear-gradient(rgba(223, 223, 223, 0.788), rgba(0,0,0,0));
+      color: rgb(255, 238, 0);
+      text-shadow: 2px 1px 1px rgba(0,0,0,0.6);
+      width: 100vw;
+      margin-bottom: 5vh;
+      
+      h2{
+        font-weight: 400;
+      }
     }
-  }
-  .details{
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 15px;
+    .details{
+      background: linear-gradient(rgba(120, 217, 255, 0.6), rgba(0,0,0,0));
+      width: 100vw;
 
-  }
-  .loc{
-    font-size: 48px;
-//    text-align: left;
-//    margin-left: 3vw;
-  }
-  .cords{
-    font-size: 11px;
-    // text-align: right;
-    // margin-left: 3vw;
-  }
-  .temp{
-    font-size: 40px;
-  }
-  .condition{
-    font-size: 32px;
-  }
-  .saved{
-    padding: 10px;
-    background-color: indianred;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    
-    .tab{
-      position: absolute;
-      height: 50px;
-      width: 50px;
-      left: 102%;
-      bottom: 1.5vh;
+    }
+    .loc{
+      font-size: 48px;
+  //    text-align: left;
+  //    margin-left: 3vw;
+    }
+    .cords{
+      font-size: 11px;
+      // text-align: right;
+      // margin-left: 3vw;
+    }
+    .temp{
+      font-size: 40px;
+    }
+    .condition{
+      font-size: 32px;
+    }
+    .saved{
+      padding: 10px;
       background-color: indianred;
-      .tab-icon{
-        height:45px;
-        width:45px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100vw;
+      
+      .tab{
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        left: 102%;
+        bottom: 1.5vh;
+        background-color: indianred;
+        .tab-icon{
+          height:45px;
+          width:45px;
+        }
       }
     }
-  }
-  .hide{
-    transform: translate3d(-100vw, 0, 0);
-  }
+    .hide{
+      transform: translate3d(-100vw, 0, 0);
+    }
 
-.btn{
-  margin-right: 5px;
-  margin-bottom: 5px;
+  .btn{
+    margin-right: 5px;
+    margin-bottom: 5px;
 
-}
-  }  
   }
+    }  
+    }
 

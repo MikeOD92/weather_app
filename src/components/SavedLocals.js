@@ -12,10 +12,8 @@ export default function SavedLocals(props){
     const toggle = (e) =>{
         e.preventDefault();
         if (show){
-            
             setShow(false)
         }else{
-
             setShow(true); 
     }}
 
