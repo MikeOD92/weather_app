@@ -4,7 +4,7 @@ import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import WeatherPanel from './components/WeatherPanel';
 import SavedLocals from './components/SavedLocals';
-import { MdRemoveRedEye, MdSave, MdSearch, MdViewHeadline} from "react-icons/md";
+import { MdSave, MdSearch} from "react-icons/md";
 
 
 require('dotenv').config();

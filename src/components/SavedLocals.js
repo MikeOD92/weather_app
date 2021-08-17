@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-import { MdRemoveRedEye, MdSave, MdSearch, MdViewHeadline} from "react-icons/md";
+import { MdViewHeadline} from "react-icons/md";
 
 export default function SavedLocals(props){
 

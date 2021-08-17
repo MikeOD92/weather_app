@@ -2,9 +2,6 @@ import '../App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { WiFahrenheit } from "react-icons/wi";
-import { MdRemoveRedEye, MdSave, MdSearch, MdViewHeadline} from "react-icons/md";
-
-
 
 export default function WeatherPanel(props){
 
