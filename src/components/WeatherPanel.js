@@ -23,11 +23,14 @@ export default function WeatherPanel(props){
     return(
         <div className="weather-tile">
             <div className="weather-head">
-                <h2 className="loc"> {props.weatherData? `${props.weatherData.name}, ${props.weatherData.sys.country}` : ''} </h2>
-                <p className="cords">{props.weatherData? `Lat: ${props.weatherData.coord.lat}, Lon: ${props.weatherData.coord.lon}`:''}</p>
-                <h3 className="temp"> {props.weatherData? `${props.weatherData.main.temp}` : ''}<WiFahrenheit/></h3>
-                <p> {props.weatherData? `feels like: ${props.weatherData.main.feels_like} `: ''}<WiFahrenheit/></p>
-                <p className="condition"> {props.weatherData? `${props.weatherData.weather[0].description}` : ''}</p>
+                <div className="weatherData">
+                    <h2 className="loc"> {props.weatherData? `${props.weatherData.name}, ${props.weatherData.sys.country}` : ''} </h2>
+                    <p className="cords">{props.weatherData? `Lat: ${props.weatherData.coord.lat}, Lon: ${props.weatherData.coord.lon}`:''}</p>
+                    <h3 className="temp"> {props.weatherData? `${props.weatherData.main.temp}` : ''}<WiFahrenheit/></h3>
+                    <p> {props.weatherData? `feels like: ${props.weatherData.main.feels_like} `: ''}<WiFahrenheit/></p>
+                    <p className="condition"> {props.weatherData? `${props.weatherData.weather[0].description}` : ''}</p>
+                </div>
+                
             </div>
             <div className="details">
                 <p> {props.weatherData? `high: ${props.weatherData.main.temp_max} | low: ${props.weatherData.main.temp_min}`: ''}</p>
