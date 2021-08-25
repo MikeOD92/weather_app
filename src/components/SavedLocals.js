@@ -36,9 +36,11 @@ export default function SavedLocals(props){
 
         <div className="saved"onClick={toggle}>
             <div className="tab"><MdViewHeadline className="tab-icon"/> </div>
-            {list.map((loc)=>{
-                return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
-            })}
+                <div className="btn-tray">
+                    {list.map((loc)=>{
+                        return (<button className="btn btn-info" value={loc} onClick={viewSaved}>{loc}</button>)
+                    })}
+                </div>
         </div>
         )
     }else{

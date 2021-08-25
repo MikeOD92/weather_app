@@ -6,26 +6,34 @@
 
 *{
   font-family: 'Nunito', sans-serif;
+  :root{
+    height: 100%;
+  }
   body{
-    background-image: url(./img/background2.jpg);
-    background-size: cover;
-    background-position: top;
-    width: 100vw;
-    overflow-x: hidden;
+
+    background: linear-gradient(rgb(255, 255, 255), rgb(155, 221, 221)); 
+    min-height: 110vh;
+    overflow-y: hidden;
+    overflow-x: hidden;   
+
 
     h1{
       font-size: 40px;
       font-weight: 700;
       letter-spacing: 2vw;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      color: rgb(47, 239, 253);
+      padding: 2%;
     }
 
     .app-header{
-      // background-color: rgba(255, 255, 255, 0.6);
-      // border-radius: 15px;
-      width: 100vw;
-      background: linear-gradient(rgba(255, 255, 255, 0.877), rgba(0,0,0,0));
       padding: 5%;
-
+      h1{
+        margin-top: 1vh;
+      
+      }
+      
       .search{
         padding:10px;
       }
@@ -40,41 +48,50 @@
       }
     }
     .weather-head{
-      width: 100vw;
       margin-bottom: 5vh;
       padding: 4%;
       .weatherData{
-        margin-left: 10vw;
-        margin-right: 10vw;
-        background-color:rgba(22, 220, 255, 0.801);
+        background-color:rgba(79, 220, 245, 0.699);
         background-image: url(./img/background1.jpg);
         background-size: cover;
-        background-blend-mode: hard-light difference;
+        background-blend-mode: screen;
+        padding: 2%;
         color: white;
-        border-radius: 10px;;
+        border-radius: 10px;
         p, .temp {
           background-color: rgba(0,0,0,0.3);
-          margin: 2vh 7vw 0 7vw;
+          margin: 2vh 7vw 1vh 7vw;
         }
       }
       h2{
         font-weight: 400;
         text-shadow: 2px 1px 1px rgba(0,0,0,0.6);
         color: rgb(255, 238, 0);
+        padding: 2%;
       }
     }
     .details{
-      padding: 6%;
-      background: linear-gradient(rgba(115, 193, 224, 0.699), rgba(0,0,0,0));
-      border: 3px solid yellow;
-      width: 100vw;
+      margin-left: 4vw;
+      margin-right: 4vw;
+      background-color:rgba(79, 220, 245, 0.699);
+      background-image: url(./img/background1.jpg);
+      background-size: cover;
+      background-blend-mode: screen;
+      border-radius: 10px;
+      padding-top:2%;
+      padding: 4%;
+      p{
+        background-color: rgba(0,0,0,0.3);
+        color: white;
+        margin: 2vh 7vw 1vh 7vw;
+      }
 
     }
     .loc{
       font-size: 52px;
     }
     .cords{
-      font-size: 21px;
+      font-size: 16px;
     }
     .temp{
       font-size: 50px;
@@ -85,19 +102,37 @@
     }
     .saved{
       padding: 10px;
-      background-color: indianred;
+      // background-image: url(./img/rain.jpg);
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+      // background-blend-mode: darken;
+      // background-size:cover;
       position: fixed;
       left: 0;
       bottom: 0;
-      height: 100vh;
-      width: 100vw;
+      height: 104vh;
+      width: 102vw;
+      .btn-tray{
+        margin-top: 5vh;
+        position: relative;
+        right: 2vw;
+        .btn{
+          padding: 2%;
+          margin: 1vh 1vw 1vh 1vw;
+        } 
+        .btn-info{
+          background-color: rgb(255, 240, 155);
+          border-color: rgb(192, 167, 23);
+        }
+      }
+    
+
       
       .tab{
-        position: absolute;
+        position: fixed;
         height: 50px;
         width: 50px;
-        left: 102%;
-        bottom: 1.5vh;
+        left: 104vw;
+        bottom: 2vh;
         background-color: indianred;
         .tab-icon{
           height:45px;
@@ -106,7 +141,7 @@
       }
     }
     .hide{
-      transform: translate3d(-100vw, 0, 0);
+      transform: translate3d(-103vw, 0, 0);
     }
 
   .btn{

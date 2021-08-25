@@ -76,7 +76,7 @@ function App() {
 return(
   <div className="container-fluid text-center"> 
     <div className="app-header">
-      <h1> Weather app</h1>
+      <h1> Rain Check</h1>
         <form onSubmit={searchLocal}>
           <input className='search' ref={localInput} type="string"/>
           <div className="btn-group">
