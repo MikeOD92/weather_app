@@ -156,29 +156,100 @@
       .app-header{
         background-color: rgba(0,0,0,0.3); 
         width: 100vw;
-        height: 10vw;
+        height: 4vh;
         position: absolute;
         left: 0;
+        padding: 2%;
           h1{
             letter-spacing: 40px;
             text-align: left;
             position: relative;
-            bottom: 14vh;
-            right: 5vw;
+            bottom: 7vh;
+            right: 2vw;
+            font-size: 32px;
           }
           form{
             text-align: right;
             position: relative;
-            bottom: 18vh;
-            left: 3vw;
+            bottom: 17vh;
+            // left: 1vw;
             input{
-              width: 75%;
+              width: 45vw;
+              height: 4vh;
+            }
+          }
+          .main-app-btn{
+            width: 4.5vh;
+            height: 4.5vh;
+          .main-icon{
+            width: 3vh;
+            height: 3vh;
             }
           }
       }
       .weatherData{
-        margin-top: 20vh;
+        margin-top: 5vh;
       }
+      .weather-tile{
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      .weather-head{
+        padding: 4%;
+        .weatherData{
+          background-color:rgba(79, 220, 245, 0.699);
+          background-image: url(./img/background1.jpg);
+          background-size: cover;
+          background-blend-mode: screen;
+          padding: 2%;
+          color: white;
+          border-radius: 10px;
+          width: 40vw;
+          height: 40vw;
+          p, .temp {
+            background-color: rgba(0,0,0,0.3);
+            margin: 2vh 7vw 1vh 7vw;
+          }
+        }
+        h2{
+          font-weight: 400;
+          text-shadow: 2px 1px 1px rgba(0,0,0,0.6);
+          color: rgb(255, 238, 0);
+          padding: 2%;
+        }
+      }
+      .details{
+        // margin-left: 4vw;
+        // margin-right: 4vw;
+        background-color:rgba(79, 220, 245, 0.699);
+        background-image: url(./img/background1.jpg);
+        background-size: cover;
+        background-blend-mode: screen;
+        border-radius: 10px;
+        padding: 4%;
+        width: 40vw;
+        height: 40vw;
+        p{
+          background-color: rgba(0,0,0,0.3);
+          color: white;
+          margin: 2vh 7vw 1vh 7vw;
+        }
+  
+      }
+      .loc{
+        font-size: 52px;
+      }
+      .cords{
+        font-size: 16px;
+      }
+      .temp{
+        font-size: 50px;
+      }
+      .condition{
+        font-size: 32px;
+  
+      }
+  
   }
 
   
