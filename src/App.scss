@@ -99,10 +99,7 @@
     ///////////////////////////////////
     .saved{
       padding: 10px;
-      // background-image: url(./img/rain.jpg);
       background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.2));
-      // background-blend-mode: darken;
-      // background-size:cover;
       position: fixed;
       left: 0;
       bottom: 0;
@@ -172,7 +169,6 @@
             text-align: right;
             position: relative;
             bottom: 17vh;
-            // left: 1vw;
             input{
               width: 45vw;
               height: 4vh;
@@ -192,23 +188,25 @@
       }
       .weather-tile{
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        right: 2vw;
       }
       .weather-head{
-        padding: 4%;
         .weatherData{
           background-color:rgba(79, 220, 245, 0.699);
           background-image: url(./img/background1.jpg);
           background-size: cover;
           background-blend-mode: screen;
-          padding: 2%;
+          // padding: 2%;
           color: white;
           border-radius: 10px;
           width: 40vw;
           height: 40vw;
           p, .temp {
             background-color: rgba(0,0,0,0.3);
-            margin: 2vh 7vw 1vh 7vw;
+            // margin: 2vh 7vw 1vh 7vw;
           }
         }
         h2{
@@ -221,19 +219,19 @@
       .details{
         // margin-left: 4vw;
         // margin-right: 4vw;
-        background-color:rgba(79, 220, 245, 0.699);
-        background-image: url(./img/background1.jpg);
-        background-size: cover;
-        background-blend-mode: screen;
-        border-radius: 10px;
-        padding: 4%;
+        // background-color:rgba(79, 220, 245, 0.699);
+        // background-image: url(./img/background1.jpg);
+        // background-size: cover;
+        // background-blend-mode: screen;
+        // border-radius: 10px;
+        // padding: 4%;
         width: 40vw;
         height: 40vw;
-        p{
-          background-color: rgba(0,0,0,0.3);
-          color: white;
-          margin: 2vh 7vw 1vh 7vw;
-        }
+        // p{
+        //   background-color: rgba(0,0,0,0.3);
+        //   color: white;
+        //   margin: 2vh 7vw 1vh 7vw;
+        // }
   
       }
       .loc{
