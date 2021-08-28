@@ -212,6 +212,7 @@
           height: 35vw;
           p, .temp {
             background-color: rgba(0,0,0,0.4);
+            margin: 0 20px 0 20px;
           }
         }
         h2{
@@ -220,29 +221,92 @@
           color: rgb(255, 238, 0);
           padding: 2%;
           font-size: 68px;
-
+        }
+        .loc{
+          font-size: 52px;
+        }
+        .cords{
+          font-size: 16px;
+        }
+        .temp{
+          font-size: 75px;
+          height: 7vw;
+        }
+        .condition{
+          font-size: 42px;
+          position: relative;
+          top: 3vh;
         }
       }
       .details{
         width: 35vw;
         height: 35vw;
+        p{
+          margin: 0 auto;
+          background-color: (rgba(0,0,0,0.4));
+
+        }
+        .highLow{
+          font-size: 30px;
+          position: relative;
+          top: 7vh;
+        }
+        .humidity{
+          font-size: 26px;
+          position: relative;
+          top: 7vh;
+        }
+        .wind{
+          position: relative;
+          top: 10vh;
+        }
+        button{
+          position: relative;
+          top: 42vh;
+          left: 14vw;
+        }
       }
-      .loc{
-        font-size: 52px;
-      }
-      .cords{
-        font-size: 16px;
-      }
-      .temp{
-        font-size: 75px;
-        width: 20vw;
-        height: 7vw;
-      }
-      .condition{
-        font-size: 42px;
+      
+      .saved{
+        padding: 10px;
+        background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 104vh;
+        width: 102vw;
+        .btn-tray{
+          margin-top: 15vh;
+          position: relative;
+          right: 1vw;
+          top: 7vh;
+          width: 50%;
+          margin: 0 auto;
+          .btn{
+            padding: 7px;
+            margin: 1vh 10px 10px 10px;
+          } 
+          .btn-info{
+            background-color: rgb(255, 240, 155);
+            border-color: rgb(192, 167, 23);
+          }
+        }
+      
   
+        
+        .tab{
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          left: 104vw;
+          bottom: 2vh;
+          background-color: indianred;
+          .tab-icon{
+            height:45px;
+            width:45px;
+          }
+        }
       }
-  
   }
 
   
