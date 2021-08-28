@@ -122,7 +122,7 @@
 
       
       .tab{
-        position: fixed;
+        position: absolute;
         height: 50px;
         width: 50px;
         left: 104vw;
@@ -158,17 +158,18 @@
         left: 0;
         padding: 2%;
           h1{
-            letter-spacing: 40px;
             text-align: left;
             position: relative;
-            bottom: 7vh;
+            bottom: 8vh;
             right: 2vw;
             font-size: 32px;
+            margin-bottom: 2vh;
           }
           form{
             text-align: right;
             position: relative;
-            bottom: 17vh;
+            bottom: 19vh;
+            margin-bottom: 17vh;
             input{
               width: 45vw;
               height: 4vh;
@@ -183,56 +184,48 @@
             }
           }
       }
-      .weatherData{
-        margin-top: 5vh;
-      }
+      // .weatherData{
+      //   // margin-top: 5vh;
+      // }
       .weather-tile{
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        width: 100vw;
         position: relative;
-        right: 2vw;
+        top: 5vh;
+
+      
       }
       .weather-head{
+        margin-bottom: 0;
         .weatherData{
           background-color:rgba(79, 220, 245, 0.699);
           background-image: url(./img/background1.jpg);
           background-size: cover;
           background-blend-mode: screen;
-          // padding: 2%;
+          padding: 2%;
           color: white;
           border-radius: 10px;
-          width: 40vw;
-          height: 40vw;
+          width: 35vw;
+          height: 35vw;
           p, .temp {
-            background-color: rgba(0,0,0,0.3);
-            // margin: 2vh 7vw 1vh 7vw;
+            background-color: rgba(0,0,0,0.4);
           }
         }
         h2{
-          font-weight: 400;
+          font-weight: 600;
           text-shadow: 2px 1px 1px rgba(0,0,0,0.6);
           color: rgb(255, 238, 0);
           padding: 2%;
+          font-size: 68px;
+
         }
       }
       .details{
-        // margin-left: 4vw;
-        // margin-right: 4vw;
-        // background-color:rgba(79, 220, 245, 0.699);
-        // background-image: url(./img/background1.jpg);
-        // background-size: cover;
-        // background-blend-mode: screen;
-        // border-radius: 10px;
-        // padding: 4%;
-        width: 40vw;
-        height: 40vw;
-        // p{
-        //   background-color: rgba(0,0,0,0.3);
-        //   color: white;
-        //   margin: 2vh 7vw 1vh 7vw;
-        // }
-  
+        width: 35vw;
+        height: 35vw;
       }
       .loc{
         font-size: 52px;
@@ -241,10 +234,12 @@
         font-size: 16px;
       }
       .temp{
-        font-size: 50px;
+        font-size: 75px;
+        width: 20vw;
+        height: 7vw;
       }
       .condition{
-        font-size: 32px;
+        font-size: 42px;
   
       }
   
