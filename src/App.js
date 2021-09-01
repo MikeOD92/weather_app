@@ -25,7 +25,7 @@ function App() {
       // having trouble with deployed version accessing env apikey through netlify, either look into fixing this or host elsewhere. 
       if(regEx.test(location)){
         try{
-          const queryURL = `http://api.openweathermap.org/data/2.5/weather?zip=${location},us&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
+          const queryURL = `https://api.openweathermap.org/data/2.5/weather?zip=${location},us&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
           const response = await fetch(queryURL);
           const data = await response.json();
           await setWeather(data);
@@ -34,7 +34,7 @@ function App() {
         } 
       }else{
         try{
-          const queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
+          const queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
           const response = await fetch(queryURL);
           const data = await response.json();
           await setWeather(data);
