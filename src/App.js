@@ -22,7 +22,7 @@ function App() {
     let regEx = /^[0-9]{5}(?:-[0-9]{4})?$/;
 
     const call = async () => {
-
+      // having trouble with deployed version accessing env apikey through netlify, either look into fixing this or host elsewhere. 
       if(regEx.test(location)){
         try{
           const queryURL = `http://api.openweathermap.org/data/2.5/weather?zip=${location},us&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
